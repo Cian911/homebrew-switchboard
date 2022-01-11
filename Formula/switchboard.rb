@@ -6,20 +6,20 @@ class Switchboard < Formula
   desc "TBD
 "
   homepage "https://github.com/Cian911/switchboard"
-  version "0.2.1"
+  version "0.2.2"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/Cian911/switchboard/releases/download/v0.2.1/switchboard_0.2.1_Darwin_arm64.tar.gz"
-      sha256 "206521c3bb2fd03b35babe71747fad2d91824f6e2d33dc3cd8a00ca578dc31c5"
+      url "https://github.com/Cian911/switchboard/releases/download/v0.2.2/switchboard_0.2.2_Darwin_arm64.tar.gz"
+      sha256 "8d8f831d9648dae89cdd769cd4fd3f007cd3003843239510410e6145b862370f"
 
       def install
         bin.install "switchboard"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/Cian911/switchboard/releases/download/v0.2.1/switchboard_0.2.1_Darwin_x86_64.tar.gz"
-      sha256 "b021fe9d19ab6e8503c902dba6800d763b50b3925c0cf0083a77441a73aa4fe2"
+      url "https://github.com/Cian911/switchboard/releases/download/v0.2.2/switchboard_0.2.2_Darwin_x86_64.tar.gz"
+      sha256 "9f12b05c4d18cdd48e7e89c11f221a2581a31d8adc61eefc3c42124b0ebbfe41"
 
       def install
         bin.install "switchboard"
@@ -28,25 +28,25 @@ class Switchboard < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Cian911/switchboard/releases/download/v0.2.1/switchboard_0.2.1_Linux_arm64.tar.gz"
-      sha256 "329fa584e7858cfb2fbc1fd8e927f59864d56984904a6ab8ceaca615d70fb3c8"
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/Cian911/switchboard/releases/download/v0.2.2/switchboard_0.2.2_Linux_armv6.tar.gz"
+      sha256 "637e0538647f2b59779875861eaac042982980cc2b126f11f1b6d83626551178"
 
       def install
         bin.install "switchboard"
       end
     end
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/Cian911/switchboard/releases/download/v0.2.1/switchboard_0.2.1_Linux_armv6.tar.gz"
-      sha256 "b010d18f26cc4540b00597e314286a85b9297d5cfe6b9466cb6df0ad0fab55cf"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/Cian911/switchboard/releases/download/v0.2.2/switchboard_0.2.2_Linux_arm64.tar.gz"
+      sha256 "ef0b2f5f5dd20e75a8cafc17023a150c6bbed7aae9a3f590d876a81a87760686"
 
       def install
         bin.install "switchboard"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/Cian911/switchboard/releases/download/v0.2.1/switchboard_0.2.1_Linux_x86_64.tar.gz"
-      sha256 "b8ca70502171c7f8c9c2e7b6e782d2bb1dc704631318a38a92ba45b62b346ed8"
+      url "https://github.com/Cian911/switchboard/releases/download/v0.2.2/switchboard_0.2.2_Linux_x86_64.tar.gz"
+      sha256 "4e166dd1f9b8f9ab16e44a22f8a0bfb1efbf91bd385cbb598a0d0ae55c188edc"
 
       def install
         bin.install "switchboard"
